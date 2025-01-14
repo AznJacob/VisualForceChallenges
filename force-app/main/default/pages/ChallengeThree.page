@@ -1,0 +1,4 @@
+<apex:page controller="AccountController">
+    <apex:stylesheet value="{!$Resource.ChallengeFive}" />
+    <h1>Hi {!acc.Name}</h1>
+</apex:page>

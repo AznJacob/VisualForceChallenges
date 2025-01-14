@@ -1,0 +1,8 @@
+<apex:page standardController="Account" recordSetVar="accounts" tabstyle="account" sidebar="false">
+    <apex:stylesheet value="{!$Resource.ChallengeFive}" />
+    <apex:pageBlock>
+        <apex:pageBlockTable value="{!accounts}" var="acc" styleClass="blockTable">
+            <apex:column value="{!acc.name}" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>
