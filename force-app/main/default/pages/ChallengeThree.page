@@ -1,9 +1,13 @@
 <apex:page controller="AccountController">
-    <apex:form >
-        <apex:stylesheet value="{!$Resource.ChallengeFive}" />
-        <h1>Hi {!acc.Name}</h1>
-        <apex:pageBlock>
-            <apex:outputPanel id="greeting"></apex:outputPanel> 
-        </apex:pageBlock>
+    <apex:stylesheet value="{!$Resource.ChallengeFive}" />
+    <apex:form>
+        <apex:commandButton value="Display account" action="{!displayGreeting}" rerender="greeting" />
+
     </apex:form>
+
+    <apex:pageBlock>
+        <apex:outputPanel id="greeting">
+            <apex:outputText value="Hi, {!acc.name}" rendered="{!isRendered}" />
+        </apex:outputPanel>
+    </apex:pageBlock>
 </apex:page>
