@@ -1,4 +1,4 @@
-.blockTable{
+[id*=blockTable]{
     color: red;
     background-color: green;
 }

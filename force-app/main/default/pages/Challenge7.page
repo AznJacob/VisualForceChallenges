@@ -1,0 +1,35 @@
+<apex:page controller='AccountSearchController' docType="html-5.0">
+    <apex:form>
+        <apex:pageMessages/>
+        <apex:pageBlock>
+            <apex:pageBlockSection>
+                <apex:input type="text" id="queryInput" value="{!query}" required="true">
+                    <apex:actionSupport event="onkeydown" action="{!fetchRecords}" rerender="content" />
+                </apex:input>
+
+                <apex:outputpanel id="content">
+
+                    <apex:pageBlockTable value="{!accs}" var="acc" id="acclist">
+                        <apex:column headerValue="Account Name">
+                            <apex:outputField value="{!acc.Name}" id="AccountNameDOM" />
+                            <apex:facet name="header">Name</apex:facet>
+                        </apex:column>
+                        <apex:inlineEditSupport event="ondblClick" showOnEdit="saveButton,cancelButton" hideOnEdit="editButton" />
+                    </apex:pageBlockTable>
+
+                    <apex:pageBlockTable value="{!cons}" var="con" id="conlist">
+                        <apex:column headerValue="Related Contacts">
+                            <apex:outputField value="{!con.LastName}" id="ContactNameDOM" />
+                            <apex:facet name="header">Related Contacts</apex:facet>
+                        </apex:column>
+                        <apex:inlineEditSupport event="ondblClick" showOnEdit="saveButton,cancelButton" hideOnEdit="editButton" />
+                    </apex:pageBlockTable>
+
+                </apex:outputpanel>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons>
+                <apex:commandButton value="Save" action="{!save}" id="saveButton" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

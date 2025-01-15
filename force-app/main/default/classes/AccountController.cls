@@ -1,12 +1,17 @@
 public with sharing class AccountController {
 
-    private Account acc;
+    private Account acc {get;set;}
+    public Boolean isRendered;
 
     public AccountController() {
-        this.acc = (Account)[SELECT Name FROM Account WHERE Name = 'TEST'];
+
     }
 
     public Account getAcc(){
-        return acc;
+        return this.acc;
+    }
+
+    public void displayGeeting(){
+        isRendered = true;
     }
 }
