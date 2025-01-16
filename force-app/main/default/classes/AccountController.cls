@@ -1,8 +1,8 @@
 public with sharing class AccountController {
 
-    public String accountId;
+    public transient String accountId;
     public Account acc {get;set;}
-    public Boolean isRendered {get; set;}
+    public transient Boolean isRendered {get; set;}
 
     public AccountController() {
         this.accountId = ApexPages.currentPage().getParameters().get('id');

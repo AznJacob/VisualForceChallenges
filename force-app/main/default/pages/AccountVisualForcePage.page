@@ -1,4 +1,5 @@
-<apex:page standardController="Account" recordSetVar="accounts" tabstyle="account" sidebar="false">
+<apex:page standardController="Account" recordSetVar="accounts" tabstyle="account" sidebar="false" renderAs="pdf">
+    <apex:outputText value="{!$Label.About_Me_Description}"></apex:outputText>
     <apex:stylesheet value="{!$Resource.ChallengeFive}" />
     <apex:pageBlock>
         <apex:pageBlockTable value="{!accounts}" var="acc" id="blockTable">
